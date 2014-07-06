@@ -1,0 +1,173 @@
+ %% specification.tex
+ %% Copyright 2014 Bertrand Pechenot
+ %
+ % This work may be distributed and/or modified under the
+ % conditions of the LaTeX Project Public License, either version 1.3c
+ % of this license or (at your option) any later version.
+ % The latest version of this license is in
+ %   http://www.latex-project.org/lppl.txt
+ % and version 1.3c or later is part of all distributions of LaTeX
+ % version 2008-05-04 or later.
+ %
+ % This work has the LPPL maintenance status `maintained'.
+ % 
+ % The Current Maintainer of this work is Bertrand Pechenot
+ %
+ % This work consists of the files specification.tex and logo.jpg
+
+ 
+ %% This file is made to help anyone willing to create 
+ % a professional quality document using Latex.
+ % 
+ % It is highly encouraged to modify, enhance and distribute
+ % this template either for a personnal/internal/public usage.
+ 
+ 
+\documentclass[a4paper,12pt,notitlepage,twoside]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[left=2cm,right=2cm,margin=1in,headheight=6\baselineskip,headsep=1\baselineskip,includehead]{geometry}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{lastpage}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Definition of various variables
+
+\newcommand{\ConfidentialityLvl}{Public}
+\newcommand{\IssuedBy}{Bertrand Pechenot}
+\newcommand{\IssuingDate}{\today}
+\newcommand{\ReviewedBy}{-}
+\newcommand{\ReviewingDate}{-}
+\newcommand{\ApprovedBy}{-}
+\newcommand{\ApprovalDate}{-}
+\newcommand{\Description}{Lorem Ipsum - Specification}
+\newcommand{\ProjectName}{-}
+\newcommand{\Revision}{1.0}
+\newcommand{\LogoFile}{./logo.jpg}
+\newcommand{\CompanyName}{World Corp Technologies}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Title Page
+\title{\Description}
+\author{\IssuedBy}
+
+\makeindex
+
+\begin{document}
+  
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0.4pt}
+  
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % Definition of the header
+  
+  \rhead{
+    \begin{minipage}[b]{\textwidth}
+      \renewcommand{\arraystretch}{1.29}%
+      \begin{spacing}{0.7}
+        \begin{tabularx}{\textwidth}{lll|}
+          \cline{3-3}
+          \multicolumn{2}{l}{\multirow{2}{*}{\includegraphics[scale=0.5,keepaspectratio=true]{\LogoFile}}}& \multicolumn{1}{|l|}{{\scriptsize Page}}\\
+          & & \multicolumn{1}{|l|}{\thepage\ ( \pageref{LastPage} )} \\
+          \cline{1-3}
+          \multicolumn{1}{|l|}{{\scriptsize Description }}      & {\scriptsize Project name}            & \multicolumn{1}{|l|}{{\scriptsize Revision}}\\
+          \multicolumn{1}{|l}{\Description }                    & \multicolumn{1}{l}{\ProjectName}      & \multicolumn{1}{l|}{\Revision}\\
+          \cline{1-3}
+        \end{tabularx}
+      \end{spacing}
+    \end{minipage}
+  }
+  \chead{}
+  \lhead{}
+  
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % Definition of the footer
+  
+  \lfoot{\CompanyName}
+  \cfoot{}
+  \rfoot{}
+  
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % Definition of the first page. Full header plus index
+  
+  \thispagestyle {empty}
+  
+  \newgeometry{top=0.1cm}
+  
+  \headheight 4cm
+  
+  
+  \newcommand{\mc}[2]{\multicolumn{1}{#1}{#2}}
+  \begin{spacing}{0.7}
+    \begin{tabularx}{\textwidth}{l|l|l|}
+      \cline{2-3}
+      \multirow{8}{*}{\includegraphics{\LogoFile}}  &  \mc{l|}{\scriptsize Confidentiality level}   & {\scriptsize Page}\\
+      \mc{l|}{}                                         & \ConfidentialityLvl                           & \thepage\ (\pageref{LastPage})\\
+      \cline{2-3}
+      \mc{l|}{} & {\scriptsize Issued by}               & {\scriptsize Date}\\
+      \mc{l|}{} & \IssuedBy                             & \IssuingDate \\
+      \cline{2-3}
+      \mc{l|}{} & {\scriptsize Reviewed by}             & {\scriptsize Date}\\
+      \mc{l|}{} & \ReviewedBy                           & \ReviewingDate\\
+      \cline{2-3}
+      \mc{l|}{} & {\scriptsize Approved by}             & {\scriptsize Date}\\
+      \mc{l|}{} & \ApprovedBy                           & \ApprovalDate \\
+      \cline{1-3}
+      \mc{|l|}{\scriptsize Description}                 & {\scriptsize Project name}                    & {\scriptsize Revision}\\
+      \mc{|l|}{\Description}                            & \ProjectName                                  & \Revision \\
+      \cline{1-3}
+    \end{tabularx}
+  \end{spacing}
+  
+  
+  \begin{center}
+    \bigskip
+    \begin{Huge}\textbf{\Description}  \end{Huge}
+    \bigskip
+  \end{center}
+  
+  
+  \tableofcontents
+  \bigskip
+  \hrule
+  
+  \newpage
+  
+  \restoregeometry
+  
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % Document itself
+  
+  \section{Lorem ipsum}
+  
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at pellentesque justo, vitae consectetur augue. Nullam nunc sem, viverra sit amet neque eu, consequat faucibus elit. Aenean magna orci, fermentum eget odio eget, fringilla aliquam mi. Pellentesque et lorem et est aliquam pretium. Morbi pulvinar feugiat turpis, eget condimentum diam mattis vel. Integer vitae leo ac diam condimentum dictum. Aenean facilisis consectetur justo eu mollis. Proin a malesuada mauris. Nunc sagittis lacinia dignissim. Fusce id mi ac lorem pulvinar ultrices. Suspendisse potenti.
+  
+  \section{Ut ac felis}
+  
+  Ut ac felis mollis arcu laoreet consequat vel at enim. Nunc ultricies neque augue, ut laoreet justo semper vitae. Sed consequat mi vel adipiscing dapibus. In porttitor blandit nisi. Fusce dapibus, purus at faucibus molestie, neque tortor lobortis nisl, eget malesuada ante justo eleifend dolor. In tincidunt pretium erat, eget gravida nisl. Duis in quam non risus consectetur posuere. Sed vitae convallis tortor, a consequat dolor. Fusce mollis tortor ac dolor aliquet vulputate. Pellentesque venenatis dignissim eros sed ultricies. Proin vitae neque malesuada, porta diam vel, ornare diam. Nam tellus neque, pellentesque vitae urna et, blandit euismod magna. Proin nulla nisi, rhoncus ut sapien ac, euismod porttitor lacus. Aenean ac sem rhoncus, convallis risus id, imperdiet mi.
+  
+  \section{Donec ac aliquet magna}
+  
+  Donec ac aliquet magna, vel accumsan libero. Duis nec pharetra eros, vel interdum velit. Nullam elementum, ligula a volutpat molestie, elit eros mattis erat, sed dignissim ipsum libero in erat. Phasellus ornare nisl sed nisi accumsan vulputate. Ut et lorem eu nunc cursus pellentesque. Proin ultrices sit amet diam sed mollis. Curabitur dapibus non felis sagittis feugiat. Donec a eros commodo, egestas lectus non, pretium nisl. Sed imperdiet purus ut ante iaculis, vitae pulvinar nibh adipiscing. Sed feugiat id orci non facilisis. Integer turpis neque, laoreet vitae neque eu, commodo ultrices quam. Cras eu auctor elit. Phasellus vel nisl vestibulum, ornare nibh hendrerit, posuere tellus. Nulla bibendum est eu tempus euismod. Duis eget elementum lectus. Duis aliquet nisl sapien, ut malesuada diam laoreet non.
+  
+  \section{Maecenas interdum}
+  
+  Maecenas interdum et enim a vulputate. In faucibus, risus a posuere porttitor, dui erat malesuada dui, vitae viverra metus tortor et velit. Aliquam adipiscing metus consequat dui condimentum molestie. Curabitur in justo ultricies, varius ligula nec, tempor odio. Maecenas dui tortor, lacinia ut bibendum quis, tristique vel lorem. Vivamus suscipit accumsan magna sed ultricies. Cras rutrum lectus eget tortor faucibus, ac imperdiet mauris facilisis. Nam rutrum vitae augue ut rhoncus. Etiam accumsan rhoncus rhoncus. Proin eu iaculis turpis. Duis ullamcorper sem rhoncus nibh euismod iaculis. Suspendisse tincidunt, enim vel tincidunt elementum, neque augue ullamcorper metus, nec lacinia arcu dolor at odio.
+  
+  \section{Maecenas erat tortor}
+  
+  Maecenas erat tortor, placerat non justo ut, sodales commodo turpis. Nullam varius felis at euismod ultrices. Nulla rutrum hendrerit metus, eu pulvinar augue egestas nec. Sed porta semper mattis. Ut eleifend, nulla a iaculis rhoncus, mauris risus pulvinar massa, eu sagittis ipsum tellus in risus. Ut vitae elit at dolor fringilla blandit eu sit amet mi. Vivamus dignissim erat sit amet nibh pulvinar viverra. Mauris varius gravida orci. Donec vel magna pretium, scelerisque ligula vel, ultrices lorem. Mauris sed diam nec sapien blandit rhoncus quis nec purus. Curabitur nisi mi, dapibus sit amet lobortis eu, consectetur sit amet dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer metus enim, facilisis non leo non, luctus ullamcorper velit. Vivamus tristique nibh vel leo dapibus tempus. Interdum et malesuada fames ac ante ipsum primis in faucibus. 
+  
+\end{document}
+
+
+
+
+
