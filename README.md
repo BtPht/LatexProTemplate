@@ -1,4 +1,0 @@
-LatexProTemplate
-================
-
-Professional report template
